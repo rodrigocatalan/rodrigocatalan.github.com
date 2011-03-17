@@ -1,1 +1,101 @@
-"First Page" 
+<!DOCTYPE html> 
+
+<html> 
+
+  <head> 
+	<title>ahrpius</title>
+	<meta charset="utf-8"> 
+
+    <script type="text/javascript">
+
+		window.addEventListener('load', function () {
+
+  			var elem = document.getElementById('logo');
+
+ 
+
+  			var context = elem.getContext('2d');
+
+ 
+
+			context.strokeStyle = '#FFFFFF';
+
+			context.lineWidth   = 10;
+
+			context.beginPath();
+
+			context.arc(130,80,35,Math.PI,0,false);
+
+			context.lineTo(180,80);
+
+			context.arc(180,105,25,Math.PI*1.5,Math.PI*2,false);
+
+			context.lineTo(215,105);
+
+			context.arc(210,135,30,Math.PI*1.5,Math.PI*0.5,false);
+
+			context.lineTo(175,165);
+
+			context.lineTo(175,230);
+
+			context.lineTo(85,230);
+
+			context.lineTo(85,165);
+
+			context.lineTo(50,165);
+
+			context.arc(50,135,30,Math.PI*0.5,Math.PI*1.5,false);
+
+			context.lineTo(60,105);
+
+			context.arc(80,105,25,Math.PI,Math.PI*1.5,false);
+
+			context.lineTo(100,80);
+
+ 
+
+			context.stroke();
+
+			context.closePath();
+
+		}, false);
+
+	</script>
+
+    <style type="text/css">
+
+    	canvas#logo{
+
+    		background-color: green;
+
+			border-radius: 40px;
+
+			position: absolute;
+
+			left: 50%;
+
+			top: 50%;
+
+			margin-left: -130px;
+
+			margin-top: -170px;
+
+    	}
+
+    </style> 
+
+  </head> 
+
+ 
+
+  <body> 
+
+    <canvas id="logo" width="260" height="340"></canvas> 
+
+  </body> 
+
+</html> 
+
+ 
+
+ 
