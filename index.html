@@ -2,7 +2,10 @@
 <html> 
 <head> 
 	<title>ahrpius</title> 
-	<meta charset="utf-8"> 
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<meta name="author" content="Rodrigo Catalan" />
+	<meta name="keywords" content="html,html5,css,javascript,java,developer,desenvolvedor,github,tag,projeto" />
 	<style type="text/css"> 
 		body{
 			background-color: #eaebd5;
@@ -10,8 +13,8 @@
 		}
 		footer{
 			position:absolute;
-			bottom: 0px;
-			left: 0px;
+			bottom: 0;
+			left: 0;
 			width: 100%;
 			background-color: #4e2c0d;
 			color: #ffffff;
@@ -76,6 +79,12 @@
 		section.projects p{
 			color: #947b2c;
 		}
+		img#forkme{
+			position: absolute; 
+			top: 0; 
+			right: 0; 
+			border: 0;
+		}
 	</style> 
 </head> 
 <body> 
@@ -109,17 +118,25 @@ System.out.println(tag.toString());
 			</div>
 		</section>
 	</div>
-	<footer>Rodrigo Catalan - ahrpius devStudio</footer>
+	<div>
+		<a href="http://github.com/rodrigocatalan">
+			<img id="forkme" alt="Fork me on GitHub">
+		</a>
+	</div>
+	<footer>
+		Rodrigo Catalan - ahrpius devStudio -
+		Este site não possui intenções de funcionar no Internet Explorer
+	</footer>
 	<script type="text/javascript">
 	
 		window.addEventListener('load',function(){
 			drawLogoAhrpius();
 			drawLogoIntag();
+			document.getElementById('forkme').src = "https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67";
 		}, false);
 		
 		function drawLogoIntag(){
 			var intag = document.getElementById('intag');
-			console.log(intag);
 			var intagCtx = intag.getContext('2d');
 			intagCtx.strokeStyle='#ffffff';
 			intagCtx.lineWidth=12;
@@ -161,11 +178,5 @@ System.out.println(tag.toString());
 			context.closePath();			
 		}
 	</script> 
-	<div>
-		<a href="http://github.com/rodrigocatalan">
-			<img style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub"
-					src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67">
-		</a>
-	</div>
 </body> 
 </html>
