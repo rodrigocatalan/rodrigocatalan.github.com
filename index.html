@@ -1,25 +1,133 @@
-
 <!DOCTYPE html> 
 <html> 
 <head> 
 	<title>ahrpius</title> 
 	<meta charset="utf-8"> 
-	<script type="text/javascript"> 
-		window.addEventListener('load',function(){
-			drawLogo();
+	<style type="text/css"> 
+		body{
+			background-color: #eaebd5;
+			font-family: Verdana;
+		}
+		footer{
+			position:absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			background-color: #4e2c0d;
+			color: #ffffff;
+			font-size:small;
+			text-shadow: #947b2c 1px 1px 1px;
+			border-top: 5px solid #794414;
+			text-align: center;
+		}
+		pre.code{
+			font-size: 12px;
+			font-family: 'Courier New', Courier, mono, serif;
+			text-shadow: #947b2c 1px 1px 1px;
+		}
+		canvas#logo{
+			background-color: #75c100;
+			-moz-border-radius: 40px;
+			border-radius: 40px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -130px;
+			margin-top: -170px;
+			-webkit-box-shadow: #adadad 5px 5px 10px;
+			box-shadow:5px 5px 10px #adadad;
+		}
+		canvas#intag{
+			background-color: #75c100;
+			-moz-border-radius: 50px;
+			border-radius: 50px;
+			position: absolute;
+			left: -50px;
+		}		
+		div#intagText{
+			-moz-border-radius: 50px;
+			border-radius: 50px;
+		
+			background-color: #dddeb8;
+			width: 260px;
+			height: 340px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: +200px;
+			margin-top: -170px;
 			
+			padding-left: 60px;
+			padding-right: 20px;
+			vertical-align: bottom;
+			font-weight:bold;
+			color: #ffffff;
+			font-size: 14px;
+		}
+		section.projects{
+			font-size: 12px;
+		}
+		section.projects h1{
+			text-shadow: #eaebd5 1px 1px 1px;
+			font-family: Tahoma;
+			font-size: 2.5em;
+			color: #568e00;
+		}
+		section.projects p{
+			color: #947b2c;
+		}
+	</style> 
+</head> 
+<body> 
+	<canvas id="logo" width="260" height="340"></canvas> 
+	<div id="intagText"> 
+		<a href="https://github.com/rodrigocatalan/intag"> 
+			<canvas id="intag" width="100" height="100"></canvas> 
+		</a> 
+		<section class="projects">
+			<h1>ahrpius.intag()</h1>
+			<div>
+				<p>
+					Biblioteca utilizada para gera&ccedil;&atilde;o de tag (html, jsp, xml, etc...) como no simples exemplo abaixo:
+				</p>
+				<pre class="code">
+InTag tag = new InTag("span");
+
+tag
+    .add("text");
+
+System.out.println(tag.toString());
+				</pre>
+				<p>
+					Resultado:
+				</p>
+				<pre class="code">
+&lt;span&gt;
+    text
+&lt;/span&gt;
+				</pre>
+			</div>
+		</section>
+	</div>
+	<footer>Rodrigo Catalan - ahrpius devStudio</footer>
+	<script type="text/javascript">
+	
+		window.addEventListener('load',function(){
+			drawLogoAhrpius();
+			drawLogoIntag();
+		}, false);
+		
+		function drawLogoIntag(){
 			var intag = document.getElementById('intag');
 			console.log(intag);
 			var intagCtx = intag.getContext('2d');
 			intagCtx.strokeStyle='#ffffff';
 			intagCtx.lineWidth=12;
 			intagCtx.beginPath();
-			
 			intagCtx.moveTo(40,25);
 			intagCtx.lineTo(20,50);
 			intagCtx.moveTo(20,50);
 			intagCtx.lineTo(40,75);
-			
 			intagCtx.moveTo(70,28);
 			intagCtx.lineTo(70,54);
 			intagCtx.moveTo(70,70);
@@ -27,10 +135,9 @@
 			intagCtx.lineCap = "round";
 			intagCtx.stroke();
 			intagCtx.closePath();			
-			
-		}, false);
-
-		function drawLogo(){
+		} 
+		
+		function drawLogoAhrpius(){
 			var elem = document.getElementById('logo');
 			var context = elem.getContext('2d');
 			context.strokeStyle='#ffffff';
@@ -54,68 +161,5 @@
 			context.closePath();			
 		}
 	</script> 
-	
-	<style type="text/css"> 
-		body{
-			background-color: #eaebd5;
-		}
-		canvas#logo{
-			background-color: #75c100;
-			-moz-border-radius: 40px;
-			border-radius: 40px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -130px;
-			margin-top: -170px;
-		}
-		xcanvas#intag{
-			background-color: #75c100;
-			-moz-border-radius: 50px;
-			border-radius: 50px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: +150px;
-			margin-top: +110px;
-		}
-		canvas#intag{
-			background-color: #75c100;
-			-moz-border-radius: 50px;
-			border-radius: 50px;
-			position: absolute;
-			left: -50px;
-		}		
-		div#intagText{
-			-moz-border-radius: 50px;
-			border-radius: 50px;
-		
-			background-color: #dddeb8;
-			width: 220px;
-			height: 100px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: +200px;
-			margin-top: -170px;
-			
-			padding-left: 60px;
-			vertical-align: bottom;
-			font-family: monospace;
-			font-weight:bold;
-			color: #ffffff;
-			text-shadow: #947b2c 1px 1px 1px;
-			font-size: 18px;
-		}
-	</style> 
-</head> 
-<body> 
-	<canvas id="logo" width="260" height="340"></canvas>
-	<div id="intagText">
-		<a href="https://github.com/rodrigocatalan/intag"> 
-			<canvas id="intag" width="100" height="100"></canvas>
-		</a>
-		ahrpius.intag();
-	</div> 
 </body> 
 </html>
