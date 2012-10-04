@@ -6,10 +6,13 @@
 	<meta http-equiv="content-language" content="pt-br" />
 	<meta name="author" content="Rodrigo Catalan" />
 	<meta name="keywords" content="html,html5,css,javascript,java,developer,desenvolvedor,github,tag,projeto" />
-	<style type="text/css"> 
+		<link href="src/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="src/prettify.js"></script>
+	<style type="text/css">
+	 	@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 		body{
 			background-color: #eaebd5;
-			font-family: Verdana;
+			font-family: 'Ubuntu', sans-serif;
 		}
 		footer{
 			position:absolute;
@@ -19,14 +22,9 @@
 			background-color: #4e2c0d;
 			color: #ffffff;
 			font-size:small;
-			text-shadow: #947b2c 1px 1px 1px;
+			
 			border-top: 5px solid #794414;
 			text-align: center;
-		}
-		pre.code{
-			font-size: 12px;
-			font-family: 'Courier New', Courier, mono, serif;
-			text-shadow: #947b2c 1px 1px 1px;
 		}
 		canvas#logo{
 			background-color: #75c100;
@@ -40,14 +38,19 @@
 			-webkit-box-shadow: #adadad 5px 5px 10px;
 			box-shadow:5px 5px 10px #adadad;
 		}
-		canvas#intag{
+		canvas.simbol{
 			background-color: #75c100;
 			-moz-border-radius: 50px;
 			border-radius: 50px;
 			position: absolute;
+		}
+		canvas#intag{
 			left: -50px;
-		}		
-		div#intagText{
+		}	
+		canvas#s_canvas{
+			right: -50px;
+		}	
+		div.box{
 			-moz-border-radius: 50px;
 			border-radius: 50px;
 		
@@ -55,24 +58,31 @@
 			width: 260px;
 			height: 340px;
 			position: absolute;
-			left: 50%;
 			top: 50%;
-			margin-left: +200px;
 			margin-top: -170px;
 			
 			padding-left: 60px;
 			padding-right: 20px;
+			
 			vertical-align: bottom;
 			font-weight:bold;
-			color: #ffffff;
-			font-size: 14px;
+			color: #144d20;
+			font-size: 14px;		
+		}	
+		div#something{
+			right: 50%;
+			margin-right: +200px;
+		
+		}		
+		div#intagText{
+			left: 50%;
+			margin-left: +200px;
 		}
 		section.projects{
 			font-size: 12px;
 		}
 		section.projects h1{
 			text-shadow: #eaebd5 1px 1px 1px;
-			font-family: Tahoma;
 			font-size: 2.5em;
 			color: #568e00;
 		}
@@ -88,10 +98,21 @@
 	</style> 
 </head> 
 <body> 
+<div id="something" class="box"> 
+		<a href="https://github.com/rodrigocatalan/"> 
+			<canvas id="s_canvas" class="simbol" width="100" height="100"></canvas> 
+		</a> 
+		<section class="projects">
+			<h1>what.now( ? )</h1>
+			<div>
+
+			</div>
+		</section>
+	</div>
 	<canvas id="logo" width="260" height="340"></canvas> 
-	<div id="intagText"> 
+	<div id="intagText" class="box"> 
 		<a href="https://github.com/rodrigocatalan/intag"> 
-			<canvas id="intag" width="100" height="100"></canvas> 
+			<canvas id="intag" class="simbol" width="100" height="100"></canvas> 
 		</a> 
 		<section class="projects">
 			<h1>ahrpius.intag()</h1>
@@ -99,18 +120,18 @@
 				<p>
 					Biblioteca utilizada para gera&ccedil;&atilde;o de tag (html, jsp, xml, etc...) como no simples exemplo abaixo:
 				</p>
-				<pre class="code">
-InTag tag = new InTag("span");
+				<pre class="prettyprint">
+InTag tag = new InTag( "span" );
 
 tag
-    .add("text");
+    .add( "text" );
 
-System.out.println(tag.toString());
+System.out.println( tag.toString() );
 				</pre>
 				<p>
 					Resultado:
 				</p>
-				<pre class="code">
+				<pre class="prettyprint">
 &lt;span&gt;
     text
 &lt;/span&gt;
@@ -124,8 +145,8 @@ System.out.println(tag.toString());
 		</a>
 	</div>
 	<footer>
-		Rodrigo Catalan - ahrpius devStudio -
-		Este site não possui intenções de funcionar no Internet Explorer
+		Rodrigo Catalan - ahrpius -
+		Algumas versões do internet explorer não conseguem executar corretamente o conteúdo desse site!
 	</footer>
 	<script type="text/javascript">
 	
@@ -133,6 +154,7 @@ System.out.println(tag.toString());
 			drawLogoAhrpius();
 			drawLogoIntag();
 			document.getElementById('forkme').src = "https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67";
+			prettyPrint()
 		}, false);
 		
 		function drawLogoIntag(){
